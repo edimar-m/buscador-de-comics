@@ -1,3 +1,16 @@
+/*******CAMBIO DE TEMA MODO CLARO/OSCURO*****/
+
+lightThemeButton.addEventListener("click", () => {
+    lightThemeButton.classList.add("is-hidden");
+    darkThemeButton.classList.remove("is-hidden");
+    document.body.classList.add("theme--dark");
+  });
+    darkThemeButton.addEventListener("click", () => {
+    lightThemeButton.classList.remove("is-hidden");
+    darkThemeButton.classList.add("is-hidden");
+    document.body.classList.remove("theme--dark");
+  });
+
 /*******IMPRESIÓN COMICS*****/
 
 const pathNonFoundNowanted =
