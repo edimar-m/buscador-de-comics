@@ -92,3 +92,38 @@ const fetchCharacters = (input, order) => {
     })
     .catch((error) => console.error(error));
 };
+/** COMICS  ***/
+let comicDetail = "";
+const getDetail = (id) => {
+  total = undefined;
+
+  const url = `https://gateway.marvel.com/v1/public/comics/${id}?&limit=20&offset=${offset}&ts=${timestamp}&apikey=${public}&hash=${hash}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((obj) => {
+      printComicInfo(obj.data.results);
+      total = obj.data.total;
+    })
+    .catch((error) => console.error(error));
+  comicDetail = id;
+  pageNumber = 1;
+  getCharacterComicDetail(comicDetail);
+  return comicDetail;
+};
+
+const getCharacterComicDetail = (id) => {
+  loader('show');
+  offset = 0;
+  const url = `https://gateway.marvel.com/v1/public/comics/${id}/characters?&limit=20&offset=${offset}&ts=${timestamp}&apikey=${public}&hash=${hash}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((obj) => {
+      printCharactersComic(
+        obj.data.results,
+        comicDataCharacters,
+        comicCharactersInfo
+      );
+      loader('hide');
+    })
+    .catch((error) => console.error(error));
+};
