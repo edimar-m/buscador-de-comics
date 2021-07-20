@@ -255,4 +255,15 @@ const mainPage = () => {
 window.onload = () => {
     fetchData(input, order);
 };
-  
+
+/***  FUNCIONALIDAD LOADER  *******/
+
+function loader(action) {
+  if (action === 'show') {
+    document.getElementById("loader").style.display = "";
+    document.getElementById("loader-container").style.display = "";
+ } else {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("loader-container").style.display = "none";
+ }
+}
