@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- ------------------Main meta-tags----------------- -->
     <meta name="author" content="Edimar Morles">
-    <meta name="description" content="Esta aplicación te permite buscar los comics de Marvel y obtener información acerca de ellos.">
-    <meta name="keywords" content="marvel, comics, personajes">
+    <meta name="description" content="Con esta aplicacion puedes buscar los comics de Marvel y obtener su información.">
+    <meta name="keywords" content="comics, personajes, marvel">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
      <!-- ------------------Open graph-faceebook----------------- -->
      <meta property="og:title" content="Buscador de Comics">
      <meta property="og:description" content="Esta aplicación te permite buscar los comics de Marvel y obtener información acerca de ellos.">
@@ -16,25 +18,26 @@
      <meta property="og:url" content="https://edimar-m.github.io/buscador-de-comics/">
      <meta property="og:image" content="">
      <!-- ------------------Twitter----------------- -->
+
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://edimar-m.github.io/buscador-de-comics/">
     <meta property="twitter:title" content="Buscador de Comics">
     <meta property="twitter:description" content="Esta aplicación te permite buscar los comics de Marvel y obtener información acerca de ellos.">
     <meta property="twitter:image" content="">
     <!-- FAVICON -->
-    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
-    <!-- BULMA CSS -->
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <!-- BULMA -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
     <!-- ------------------Links----------------- -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
-    <!-- ------------------Links CSS ---------------------->
     <link rel="stylesheet" href="./css/other-styles.css">
     <link rel="stylesheet" href="./css/style.css">
-    
     <title>Marvel Comics</title>
 </head>
+
 <body>
+
    <!-- Header -->
    <header>
     <nav class="navbar has-background-black is-justify-content-center nav-title">
@@ -75,62 +78,58 @@
                             <option value='-focDate'>Más nuevos</option>
                             <option value='focDate'>Más viejos</option>
                         </select>
+
                     </div>
-                    <button id="btn-search" class="button mx-2 btn-search mb-3">BUSCAR</button>
-                    <button onclick="mainPage()" class="button has-text-weight-bold mx-2 mb-3" id="main-page">INICIO</button>
-                </div>
-
-            </div>
-        </div>
-    </section>
-    <!-- Termina sección búsqueda -->
-
-    <!-- Comienza sección Resultados de la búsqueda-->
-    <!-- Comics -->
-    <section id="container-comics" class="container mb-5">
-        <h2 class="subtitle has-text-weight-bold mx-4 mb-3 title-color">Resultados</h2>
-        <p class="mb-3 mx-4 has-text-weight-bold has-text-grey"><span id="total-result">0</span> resultados</p>
-        <!-- comienza contenedor-loader -->
-        <div id="container-loader" class="is-hidden container-loader">
-            <div id="loader-container">
-                <div id="loader" style="display: none;" role="status"> 
                 </div>
             </div>
-        </div>
-        <!-- Termina contenedor-loader -->
-        <div id="main-container" class="columns is-flex-wrap-wrap m-2"></div>
-    </section>
-    <section id="container-comic-info" class="container mb-5 is-hidden comic-info">
-        <div id="comic-info" class="p-6"></div>
-        <div id="comic-data-characters" class="p-6"></div>
-        <div id="comic-characters-info" class="columns is-flex is-flex-wrap-wrap px-6 pt-0"></div>
-    </section>
-    <section id="container-character-info" class="container mb-5 is-hidden character-info">
-        <div id="character-info" class="p-6"></div>
-        <div id="character-data-comics" class="p-6"></div>
-        <div id="comics-character-info" class="columns is-flex is-flex-wrap-wrap px-6 pt-0"></div>
-    </section>
-    <!-- Termina sección Resultados de la búsqueda-->
+        </section>
+        <!-- Termina sección búsqueda -->
 
-    <!-- Paginador -->
-    <section id="pagination-container" class="container is-flex is-justify-content-center my-6">
-    </section>
-</main>
+        <!-- Comienza sección Resultados de la búsqueda-->
+        <!-- Comics -->
+        <section id="container-comics" class="container mb-5">
+            <h2 class="subtitle has-text-weight-bold mx-4 mb-3 title-color">Resultados</h2>
+            <p class="mb-3 mx-4 has-text-weight-bold has-text-grey"><span id="total-result">0</span> resultados</p>
+            <!-- comienza contenedor-loader -->
+            <div id="container-loader" class="is-hidden container-loader">
+                <div id="loader-container">
+                    <div id="loader" style="display: none;" role="status"> 
+                    </div>
+                </div>
+            </div>
+            <!-- Termina contenedor-loader -->
+            <div id="main-container" class="columns is-flex-wrap-wrap m-2"></div>
+        </section>
+        <section id="container-comic-info" class="container mb-5 is-hidden comic-info">
+            <div id="comic-info" class="p-6"></div>
+            <div id="comic-data-characters" class="p-6"></div>
+            <div id="comic-characters-info" class="columns is-flex is-flex-wrap-wrap px-6 pt-0"></div>
+        </section>
+        <section id="container-character-info" class="container mb-5 is-hidden character-info">
+            <div id="character-info" class="p-6"></div>
+            <div id="character-data-comics" class="p-6"></div>
+            <div id="comics-character-info" class="columns is-flex is-flex-wrap-wrap px-6 pt-0"></div>
+        </section>
+        <!-- Termina sección Resultados de la búsqueda-->
 
-<!-- Footer -->
-<footer>
-    <nav class="navbar has-background-black is-justify-content-center is-align-items-center navbar-footer">
-        <span class="has-text-centered py3 px-5 has-text-white ">Hecho con 💗 por Edimar Morles</span>
-    </nav>
-</footer>
+        <!-- Paginador -->
+        <section id="pagination-container" class="container is-flex is-justify-content-center my-6">
+        </section>
+    </main>
 
+    <!-- Footer -->
+    <footer>
+        <nav class="navbar has-background-black is-justify-content-center is-align-items-center navbar-footer">
+            <span class="has-text-centered py3 px-5 has-text-white ">Hecho con 💗 por Edimar Morles</span>
+        </nav>
+    </footer>
 
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.18.0/js/md5.min.js"
-    integrity="sha512-Hmp6qDy9imQmd15Ds1WQJ3uoyGCUz5myyr5ijainC1z+tP7wuXcze5ZZR3dF7+rkRALfNy7jcfgS5hH8wJ/2dQ=="
-    crossorigin="anonymous"></script>
-<script src="https://kit.fontawesome.com/348feffef2.js" crossorigin="anonymous"></script>
-<script src="./js/app.js"></script>
-<script src="./js/main.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.18.0/js/md5.min.js"
+        integrity="sha512-Hmp6qDy9imQmd15Ds1WQJ3uoyGCUz5myyr5ijainC1z+tP7wuXcze5ZZR3dF7+rkRALfNy7jcfgS5hH8wJ/2dQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/348feffef2.js" crossorigin="anonymous"></script>
+    <script src="./js/app.js"></script>
+    <script src="./js/main.js"></script>
 </body>
-</html> 
+</html>
