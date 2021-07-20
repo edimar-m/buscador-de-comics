@@ -36,3 +36,59 @@ const btnSearch = document.getElementById("btn-search");
 
 // Paginado
 const paginationContainer = document.getElementById("pagination-container");
+
+//configuraciones generales
+let offset = 0;
+let total;
+let input = searchInput.value;
+let order = searchOrder.value;
+let type = searchType.value;
+let pageNumber = 1;
+
+/** PETICIONES COMICS/PERSONAJES  ***/ 
+
+const fetchData = (input, order) => {
+  containerInfoCharacter.classList.add("is-hidden");
+  comicInfoContainer.classList.add("is-hidden");
+  containerComics.classList.remove("is-hidden");
+  loaderContanier.classList.remove("is-hidden");
+  characterContainer.classList.add("is-hidden");
+  total = undefined;
+  let url;
+  if (input !== "") {
+    url = `https://gateway.marvel.com/v1/public/comics?titleStartsWith=${input}&orderBy=${order}&limit=20&offset=${offset}&ts=${timestamp}&apikey=${public}&hash=${hash}`;
+  } else {
+    url = `https://gateway.marvel.com/v1/public/comics?&orderBy=${order}&limit=20&offset=${offset}&ts=${timestamp}&apikey=${public}&hash=${hash}`;
+  }
+  loader('show');
+  fetch(url)
+    .then((response) => response.json())
+    .then((obj) => {
+      loader('hide'),
+      printData(obj.data.results);
+      total = obj.data.total;
+      totalData.innerHTML = total;
+    })
+    .catch((error) => console.error(error));
+};
+
+const fetchCharacters = (input, order) => {
+  characterContainer.classList.add("is-hidden");
+  total = undefined;
+  loader('show');
+  let url;
+  if (input !== "") {
+    url = `https://gateway.marvel.com/v1/public/characters?nameStartsWith=${input}&orderBy=${order}&limit=20&offset=${offset}&ts=${timestamp}&apikey=${public}&hash=${hash}`;
+  } else {
+    url = `https://gateway.marvel.com/v1/public/characters?&orderBy=${order}&limit=20&offset=${offset}&ts=${timestamp}&apikey=${public}&hash=${hash}`;
+  }
+  fetch(url)
+    .then((response) => response.json())
+    .then((obj) => {
+      printCharactersComic(obj.data.results, "", characterContainer);
+      total = obj.data.total;
+      totalData.innerHTML = total;
+      loader('hide');
+    })
+    .catch((error) => console.error(error));
+};
