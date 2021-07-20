@@ -127,3 +127,35 @@ const getCharacterComicDetail = (id) => {
     })
     .catch((error) => console.error(error));
 };
+/** PERSONAJES  ***/
+
+let characterDetail = "";
+const getCharacterDetail = (id) => {
+  total = undefined;
+
+  const url = `https://gateway.marvel.com/v1/public/characters/${id}?&limit=20&offset=${offset}&ts=${timestamp}&apikey=${public}&hash=${hash}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((obj) => {
+      printInfoCharater(obj.data.results);
+      total = obj.data.results[0].comics.available;
+    })
+    .catch((error) => console.error(error));
+  characterDetail = id;
+  pageNumber = 1;
+  getComicsCharacterDetail(characterDetail);
+  return characterDetail;
+};
+
+const getComicsCharacterDetail = (id) => {
+  comicsCharacterInfo.classList.add("is-hidden");
+  loaderContanier.classList.remove("is-hidden");
+  const url = `https://gateway.marvel.com/v1/public/characters/${id}/comics?&limit=20&offset=${offset}&ts=${timestamp}&apikey=${public}&hash=${hash}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((obj) => {
+      printCharacter(obj.data.results);
+      loaderContanier.classList.add("is-hidden");
+    })
+    .catch((error) => console.error(error));
+};
