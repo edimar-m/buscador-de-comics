@@ -1,8 +1,8 @@
-# Generador de memes 📱
+# Buscador de comics 📱
 
   ### Esta aplicación te permite buscar los comics de Marvel y obtener información acerca de ellos.
 
-  ### Esta aplicación fue realizada con HTML5,CSS3 y JavaScript, como evaluación del módulo 6 del curso de desarrollo FrontEnd en ADA ITW.
+  ### Esta aplicación fue realizada como evaluación del módulo 6 del curso de desarrollo FrontEnd en ADA ITW.
 
   ### Si quieres probarla puedes hacer click [aquí](https://edimar-m.github.io/buscador-de-comics/).
 
@@ -26,10 +26,10 @@
 <br>
 
 ### Vista del modo claro
-![images](https://github.com/edimar-m/Generador-de-memes/blob/master/images/screencapture-proyecto-generador-de-memes-claro.png)
+![images](https://github.com/edimar-m/buscador-de-comics/blob/master/images/screencapture-buscador-de-comics-claro.png)
 
 ### Vista del modo oscuro
-![images](https://github.com/edimar-m/Generador-de-memes/blob/master/images/screencapture-proyecto-generador-de-memes-oscuro.png)
+![images](https://github.com/edimar-m/buscador-de-comics/blob/master/images/screencapture-buscador-comics-oscuro.png)
 
 ***
 ## Agradecimientos🙌
