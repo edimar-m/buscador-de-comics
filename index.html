@@ -3,87 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- ------------------Main meta-tags----------------- -->
     <meta name="author" content="Edimar Morles">
     <meta name="description" content="Esta aplicación te permite buscar los comics de Marvel y obtener información acerca de ellos.">
     <meta name="keywords" content="marvel, comics, personajes">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- LINKS -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+     <!-- ------------------Open graph-faceebook----------------- -->
+     <meta property="og:title" content="Buscador de Comics">
+     <meta property="og:description" content="Esta aplicación te permite buscar los comics de Marvel y obtener información acerca de ellos.">
+     <meta property="og:type" content="article">
+     <meta property="og:site name" content="Buscador de Comics">
+     <meta property="og:url" content="">
+     <meta property="og:image" content="">
+     <!-- ------------------Twitter----------------- -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="">
+    <meta property="twitter:title" content="Buscador de Comics">
+    <meta property="twitter:description" content="Esta aplicación te permite buscar los comics de Marvel y obtener información acerca de ellos.">
+    <meta property="twitter:image" content="">
+    <!-- FAVICON -->
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
+    <!-- BULMA CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <!-- ------------------Links----------------- -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+    <!-- ------------------Links CSS ---------------------->
+    <link rel="stylesheet" href="./css/other-styles.css">
     <link rel="stylesheet" href="./css/style.css">
+    
     <title>Marvel Comics</title>
 </head>
 <body>
-    <!-- HEADER -->
-    <header>
-        <nav class="navbar has-background-black is-justify-content-center">
-            <span class="has-text-centered py3 px-5 has-text-white titulo">ADA COMICS</span>
-        </nav>
-    </header>
-    <main>
-      <!-- HERO -->
-        <section class="hero is-danger is-halfheight img">
-            <div class="hero-body"></div>
-        </section>
-        <!-- COMIENZA LA SECCIÓN DE BÚSQUEDA -->
-        <section class="container my-5">
-                <div class="column">
-                  <label for="ingresar-busqueda" class="label is-size-3">Búsqueda</label>
-                  <div class="columns">
-                      <div class="columns m-5 px-2 is-align-items-center">
-                        <input id="ingresar-busqueda" class="input mx-2 input-busq" type="text" placeholder="Ingresa tu búsqueda">
-                        <label for="tipo" class="label mx-5 label-select pt-2">TIPO</label>
-                        <div>
-                            <select id="tipo" class="select select-busq">
-                              <option>COMICS</option>
-                              <option>PERSONAJES</option>
-                            </select>
-                          </div>
-                          <label for="orden" class="label mx-5 label-select pt-2">ORDEN</label>
-                          <div>
-                            <select id="orden" class="select select-busq">
-                              <option>A/Z</option>
-                              <option>Z/A</option>
-                              <option>Más nuevos</option>
-                              <option>Más viejos</option>
-                            </select>
-                          </div>
-                        <button class="button is-black mx-6">BUSCAR</button>
+   <!-- Header -->
+   <header>
+    <nav class="navbar has-background-black is-justify-content-center nav-title">
+        <span class="has-text-centered py3 px-5 has-text-white titulo">ADA COMICS</span>
+    </nav>
+</header>
+<main>
+    <!-- Hero -->
+    <section class="hero is-danger is-halfheight img-hero">
+        <div class="hero-body"></div>
+    </section>
+   <!-- Comienza sección búsqueda -->
+    <section class="container mb-3">
+        <div class="column">
+            <div class="columns is-justify-content-space-between is-mobile ml-3 mr-5 title-search-container">
+                <label for="search-input" class="label is-size-3">Búsqueda</label>
+                 <!-- Cambio de tema modo claro/oscuro -->
+                <button class="btn-theme" id="light-theme-button" aria-label="Cambiar a Modo Oscuro"><i class="fas fa-moon"></i></button>
+                <button class="btn-theme is-hidden" id="dark-theme-button" aria-label="Cambiar a Modo Claro"><i class="fas fa-sun"></i></button>
+            </div>
+            <div class="columns  is-flex">
+                <div class="columns ml-3 mr-5 my-2 px-2 is-align-items-center is-flex-wrap-wrap">
+                    <i class="fas fa-search"></i>
+                    <input id="search-input" class="input mx-2 input-search mb-3" type="text"
+                        placeholder="Ingresa tu búsqueda">
+                    <label for="search-type" class="label mx-3 label-select pt-2 mb-3">TIPO</label>
+                    <div>
+                        <select id="search-type" class="select select-search mb-3 mx-2">
+                            <option value="comics">COMICS</option>
+                            <option value="characters">PERSONAJES</option>
+                        </select>
                     </div>
-                  </div>
+                    <label for="search-order" class="label mx-3 label-select pt-2 mb-3">ORDEN</label>
+                    <div>
+                        <select id="search-order" class="select select-search mb-3 mx-2">
+                            <option value='title'>A/Z</option>
+                            <option value='-title'>Z/A</option>
+                            <option value='-focDate'>Más nuevos</option>
+                            <option value='focDate'>Más viejos</option>
+                        </select>
+                    </div>
+                    <button id="btn-search" class="button mx-2 btn-search mb-3">BUSCAR</button>
+                    <button onclick="mainPage()" class="button has-text-weight-bold mx-2 mb-3" id="main-page">INICIO</button>
                 </div>
-        </section>
-        <!-- COMIENZA LA SECCIÓN DE COMICS -->
-        <section class="container mb-5">
-            <div id="main-container" class="columns is-flex-wrap-wrap"></div>
-        </section>
-        <!-- PAGINADOR -->
-        <section class="container is-flex is-justify-content-center my-6">
-            <button class="button button mr-3">
-                <i class="fas fa-caret-square-left is-size-4"></i>
-            </button>
-            <button class="button mr-2">
-                <i class="fas fa-caret-left is-size-4"></i>
-            </button>
-            <button class="button">
-                <i class="fas fa-caret-right is-size-4"></i>
-            </button>
-            <button class="button ml-3">
-                <i class="fas fa-caret-square-right is-size-4"></i>
-            </button>
-        </section>
-    </main>
-    <!-- FOOTER -->
-    <footer>
-        <nav class="navbar has-background-black is-justify-content-center is-align-items-center">
-            <span class="has-text-centered py3 px-5 has-text-white ">Hecho con ❤ por Edimar Morles</span>
-        </nav>
-    </footer>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.18.0/js/md5.min.js" integrity="sha512-Hmp6qDy9imQmd15Ds1WQJ3uoyGCUz5myyr5ijainC1z+tP7wuXcze5ZZR3dF7+rkRALfNy7jcfgS5hH8wJ/2dQ==" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/348feffef2.js" crossorigin="anonymous"></script>
+            </div>
+        </div>
+    </section>
+    <!-- Termina sección búsqueda -->
 
+    <!-- Comienza sección Resultados de la búsqueda-->
+    <!-- Comics -->
+    <section id="container-comics" class="container mb-5">
+        <h2 class="subtitle has-text-weight-bold mx-4 mb-3 title-color">Resultados</h2>
+        <p class="mb-3 mx-4 has-text-weight-bold has-text-grey"><span id="total-result">0</span> resultados</p>
+        <!-- comienza contenedor-loader -->
+        <div id="container-loader" class="is-hidden container-loader">
+            <div id="loader-container">
+                <div id="loader" style="display: none;" role="status"> 
+                </div>
+            </div>
+        </div>
+        <!-- Termina contenedor-loader -->
+        <div id="main-container" class="columns is-flex-wrap-wrap m-2"></div>
+    </section>
+    <section id="container-comic-info" class="container mb-5 is-hidden comic-info">
+        <div id="comic-info" class="p-6"></div>
+        <div id="comic-data-characters" class="p-6"></div>
+        <div id="comic-characters-info" class="columns is-flex is-flex-wrap-wrap px-6 pt-0"></div>
+    </section>
+    <section id="container-character-info" class="container mb-5 is-hidden character-info">
+        <div id="character-info" class="p-6"></div>
+        <div id="character-data-comics" class="p-6"></div>
+        <div id="comics-character-info" class="columns is-flex is-flex-wrap-wrap px-6 pt-0"></div>
+    </section>
+    <!-- Termina sección Resultados de la búsqueda-->
+
+    <!-- Paginador -->
+    <section id="pagination-container" class="container is-flex is-justify-content-center my-6">
+    </section>
+</main>
+
+<!-- Footer -->
+<footer>
+    <nav class="navbar has-background-black is-justify-content-center is-align-items-center navbar-footer">
+        <span class="has-text-centered py3 px-5 has-text-white ">Hecho con 💗 por Edimar Morles</span>
+    </nav>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.18.0/js/md5.min.js"
+    integrity="sha512-Hmp6qDy9imQmd15Ds1WQJ3uoyGCUz5myyr5ijainC1z+tP7wuXcze5ZZR3dF7+rkRALfNy7jcfgS5hH8wJ/2dQ=="
+    crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/348feffef2.js" crossorigin="anonymous"></script>
+<script src="./js/app.js"></script>
+<script src="./js/main.js"></script>
 </body>
-</html>
+</html> 
