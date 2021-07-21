@@ -37,48 +37,50 @@
 </head>
 
 <body>
-
-   <!-- Header -->
-   <header>
-    <nav class="navbar has-background-black is-justify-content-center nav-title">
-        <span class="has-text-centered py3 px-5 has-text-white titulo">ADA COMICS</span>
-    </nav>
-</header>
-<main>
-    <!-- Hero -->
-    <section class="hero is-halfheight img-hero">
-        <div class="hero-body"></div>
-    </section>
-   <!-- Comienza sección búsqueda -->
-    <section class="container mb-3">
-        <div class="column">
-            <div class="columns is-justify-content-space-between is-mobile ml-3 mr-5 title-search-container">
-                <label for="search-input" class="label is-size-3">Búsqueda</label>
-                 <!-- Cambio de tema modo claro/oscuro -->
-                <button class="btn-theme" id="light-theme-button" aria-label="Cambiar a Modo Oscuro"><i class="fas fa-moon"></i></button>
-                <button class="btn-theme is-hidden" id="dark-theme-button" aria-label="Cambiar a Modo Claro"><i class="fas fa-sun"></i></button>
-            </div>
-            <div class="columns  is-flex">
-                <div class="columns ml-3 mr-5 my-2 px-2 is-align-items-center is-flex-wrap-wrap">
-                    <i class="fas fa-search"></i>
-                    <input id="search-input" class="input mx-2 input-search mb-3" type="text"
-                        placeholder="Ingresa tu búsqueda">
-                    <label for="search-type" class="label mx-3 label-select pt-2 mb-3">TIPO</label>
-                    <div>
-                        <select id="search-type" class="select select-search mb-3 mx-2">
-                            <option value="comics">COMICS</option>
-                            <option value="characters">PERSONAJES</option>
-                        </select>
-                    </div>
-                    <label for="search-order" class="label mx-3 label-select pt-2 mb-3">ORDEN</label>
-                    <div>
-                        <select id="search-order" class="select select-search mb-3 mx-2">
-                            <option value='title'>A/Z</option>
-                            <option value='-title'>Z/A</option>
-                            <option value='-focDate'>Más nuevos</option>
-                            <option value='focDate'>Más viejos</option>
-                        </select>
-
+    
+    <!-- Header -->
+    <header>
+        <nav class="navbar has-background-black is-justify-content-center nav-title">
+            <span class="has-text-centered py3 px-5 has-text-white titulo">ADA COMICS</span>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero -->
+        <section class="hero is-danger is-halfheight img-hero">
+            <div class="hero-body"></div>
+        </section>
+       <!-- Comienza sección búsqueda -->
+        <section class="container mb-3">
+            <div class="column">
+                <div class="columns is-justify-content-space-between is-mobile ml-3 mr-5 title-search-container">
+                    <label for="search-input" class="label is-size-3">Búsqueda</label>
+                     <!-- Cambio de tema modo claro/oscuro -->
+                    <button class="btn-theme" id="light-theme-button" aria-label="Cambiar a Modo Oscuro"><i class="fas fa-moon"></i></button>
+                    <button class="btn-theme is-hidden" id="dark-theme-button" aria-label="Cambiar a Modo Claro"><i class="fas fa-sun"></i></button>
+                </div>
+                <div class="columns  is-flex">
+                    <div class="columns ml-3 mr-5 my-2 px-2 is-align-items-center is-flex-wrap-wrap">
+                        <i class="fas fa-search"></i>
+                        <input id="search-input" class="input mx-2 input-search mb-3" type="text"
+                            placeholder="Ingresa tu búsqueda">
+                        <label for="search-type" class="label mx-3 label-select pt-2 mb-3">TIPO</label>
+                        <div>
+                            <select id="search-type" class="select select-search mb-3 mx-2">
+                                <option value="comics">COMICS</option>
+                                <option value="characters">PERSONAJES</option>
+                            </select>
+                        </div>
+                        <label for="search-order" class="label mx-3 label-select pt-2 mb-3">ORDEN</label>
+                        <div>
+                            <select id="search-order" class="select select-search mb-3 mx-2">
+                                <option value='title'>A/Z</option>
+                                <option value='-title'>Z/A</option>
+                                <option value='-focDate'>Más nuevos</option>
+                                <option value='focDate'>Más viejos</option>
+                            </select>
+                        </div>
+                        <button id="btn-search" class="button mx-2 btn-search mb-3">BUSCAR</button>
+                        <button onclick="mainPage()" class="button has-text-weight-bold mx-2 mb-3" id="main-page">INICIO</button>
                     </div>
                 </div>
             </div>
