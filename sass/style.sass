@@ -130,6 +130,9 @@ a
 #first-page-btn
   background-color: var(--fontColorSecond)
 
+.title-color
+  color: #628395
+
 /* ..SECCIÓN COMICS. ***/
 
 .comic-info
@@ -225,6 +228,14 @@ a
 
 /* ..MEDIA QUERIES. ***/
 
+@media( max-width: 350px)
+  .theme-button
+    margin: 0
+    padding: 0
+    margin-top: 0.8rem
+  .title-color
+
+
 @media( max-width: 680px)
   .input-search
     width: 100%
@@ -234,6 +245,16 @@ a
     align-items: center
     justify-content: center
     flex-direction: column
+
+  .btn-theme
+    margin: 0
+    margin-top: 0.8rem
+    margin-left: 3.8rem
+
+  .footer-text
+    display: flex
+    align-items: center
+    justify-content: center
 
 @media( max-width: 770px)
 
@@ -245,6 +266,9 @@ a
     justify-content: center
     flex-direction: column
     margin: 25px 0
+
+  .search-section
+    padding-left: 2.5rem
 
   .card-image
     width: 300px
@@ -259,6 +283,12 @@ a
     align-items: center
     justify-content: center
     flex-direction: column
+
+  .footer-text
+    display: flex
+    align-items: center
+    justify-content: center
+
 
   
 

@@ -99,7 +99,7 @@ const printData = (arr) => {
                   <figure class="img-detalle">
                   <img src="${
                     path === pathNonFoundNowanted ? pathNonFoundWanted : path
-                  }.${extension}" alt="${title}" class="img-comic-info">
+                  }.${extension}" alt="${title}" class="img-comic-info text-comic">
                   </figure>
               </div>
               <div class="column is-size-5 px-6 py-4 title-color">
@@ -200,7 +200,7 @@ const printData = (arr) => {
                   <figure class="img-detalle">
                   <img src="${
                     path === pathNonFoundNowanted ? pathNonFoundWanted : path
-                  }.${extension}" alt="${name}" class="img-comic-info">
+                  }.${extension}" alt="${name}" class="img-comic-info text-comic">
                   </figure>
               </div>
               <div class="column is-size-5 px-6 py-4 label-select">

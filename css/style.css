@@ -9,7 +9,7 @@
 .theme--dark {
   --backgroundColor: #2C2E43;
   --fontColorPpal: #f6e5e9;
-  --fontColorSecond: #a14c64;
+  --fontColorSecond: #da90a5;
   --hoverFontColor: #FFD523;
 }
 
@@ -145,6 +145,10 @@ a:hover p {
   background-color: var(--fontColorSecond);
 }
 
+.title-color {
+  color: #628395;
+}
+
 /* ..SECCIÓN COMICS. ***/
 .comic-info {
   font-family: "Roboto", sans-serif;
@@ -247,6 +251,13 @@ a:hover p {
 }
 
 /* ..MEDIA QUERIES. ***/
+@media (max-width: 350px) {
+  .theme-button {
+    margin: 0;
+    padding: 0;
+    margin-top: 0.8rem;
+  }
+}
 @media (max-width: 680px) {
   .input-search {
     width: 100%;
@@ -258,6 +269,18 @@ a:hover p {
     justify-content: center;
     flex-direction: column;
   }
+
+  .btn-theme {
+    margin: 0;
+    margin-top: 0.8rem;
+    margin-left: 3.8rem;
+  }
+
+  .footer-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 @media (max-width: 770px) {
   .center {
@@ -268,6 +291,10 @@ a:hover p {
     justify-content: center;
     flex-direction: column;
     margin: 25px 0;
+  }
+
+  .search-section {
+    padding-left: 2.5rem;
   }
 
   .card-image {
@@ -284,6 +311,12 @@ a:hover p {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+  }
+
+  .footer-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
