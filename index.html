@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- ------------------Main meta-tags----------------- -->
     <meta name="author" content="Edimar Morles">
-    <meta name="description" content="Con esta aplicacion puedes buscar los comics de Marvel y obtener su información.">
+    <meta name="description" content="Con esta aplicacion puedes buscar los comics de Marvel y obtener información acerca de ellos..">
     <meta name="keywords" content="comics, personajes, marvel">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -54,9 +54,6 @@
             <div class="column search-section">
                 <div class="columns is-justify-content-space-between is-mobile ml-3 mr-5 title-search-container">
                     <label for="search-input" class="label is-size-3">Búsqueda</label>
-                     <!-- Cambio de tema modo claro/oscuro -->
-                        <button class="btn-theme" id="light-theme-button" aria-label="Cambiar a Modo Oscuro"><i class="fas fa-moon"></i></button>
-                        <button class="btn-theme is-hidden" id="dark-theme-button" aria-label="Cambiar a Modo Claro"><i class="fas fa-sun"></i></button>
                 </div>
                 <div class="columns  is-flex">
                     <div class="columns ml-3 mr-5 my-2 px-2 is-align-items-center is-flex-wrap-wrap">
@@ -115,7 +112,19 @@
         <!-- Termina sección Resultados de la búsqueda-->
 
         <!-- Paginador -->
-        <section id="pagination-container" class="container is-flex is-justify-content-center my-6">
+        <section class="container is-flex is-justify-content-center my-6" id="pagination-container">
+            <button id="first-page-btn" class="button button mr-3">
+                <i class="fas fa-caret-square-left is-size-4"></i>
+            </button>
+            <button id="previews-page-btn" class="button mr-2">
+                <i class="fas fa-caret-left is-size-4"></i>
+            </button>
+            <button id="next-page-btn" class="button">
+                <i class="fas fa-caret-right is-size-4"></i>
+            </button>
+            <button id="lastPagelast-page-btn" class="button ml-3">
+                <i class="fas fa-caret-square-right is-size-4"></i>
+            </button>
         </section>
     </main>
 

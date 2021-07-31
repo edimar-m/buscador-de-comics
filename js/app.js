@@ -25,8 +25,6 @@ const comicsCharacterInfo = document.getElementById("comics-character-info");
 const characterDataComics = document.getElementById(
   "character-data-comics"
 );
-const lightThemeButton = document.getElementById("light-theme-button");
-const darkThemeButton = document.getElementById("dark-theme-button");
 
 //Búsqueda
 const searchInput = document.getElementById("search-input");

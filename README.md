@@ -25,11 +25,8 @@
 ## Este es el resultado final del proyecto:
 <br>
 
-### Vista del modo claro
+### Vista del Proyecto
 ![images](https://github.com/edimar-m/buscador-de-comics/blob/master/images/screencapture-buscador-de-comics-claro.png)
-
-### Vista del modo oscuro
-![images](https://github.com/edimar-m/buscador-de-comics/blob/master/images/screencapture-buscador-comics-oscuro.png)
 
 ***
 ## Agradecimientos🙌
