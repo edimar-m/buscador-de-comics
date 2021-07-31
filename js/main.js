@@ -1,15 +1,17 @@
 /*******IMPRESIÓN COMICS*****/
-
+//Imagen no disponible
 const pathNonFoundNowanted =
 "https://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available";
 const pathNonFoundWanted =
 "https://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available/portrait_uncanny";  
 
+//Función pintar los comics
 const printData = (arr) => {
     containerInfoCharacter.classList.add("is-hidden");
     comicInfoContainer.classList.add("is-hidden");
     characterContainer.classList.remove("is-hidden");
-    let box = "";
+    let box = '';
+
     arr.forEach((comic) => {
       const {
         title,
@@ -35,12 +37,12 @@ const printData = (arr) => {
               <button id="first-page-btn" class="button button mr-3 is-danger" ${
                 offset === 0 && "disabled"
               } onclick="firstPage(${() => fetchData(input, order)})">
-                  <i class="fas fa-caret-square-left is-size-4"></i>
+              <i class="fas fa-angle-double-left"></i>
               </button>
               <button id="previews-page-btn" class="button mr-2" ${
                 offset === 0 && "disabled"
               } onclick="previewsPage(${() => fetchData(input, order)})">
-                  <i class="fas fa-caret-left is-size-4"></i>
+              <i class="fas fa-angle-left"></i>
               </button>
               <div class="button mr-2">
                   <span id="page-number">${pageNumber}</span>
@@ -48,16 +50,17 @@ const printData = (arr) => {
               <button id="next-page-btn" class="button" ${
                 offset === total - (total % 20) && "disabled"
               } onclick="nextPage(${() => fetchData(input, order)})">
-                  <i class="fas fa-caret-right is-size-4"></i>
+              <i class="fas fa-angle-right"></i>
               </button>
               <button id="last-page-btn" class="button ml-3 is-danger" ${
                 offset === total - (total % 20) && "disabled"
               } onclick="lastPage(${() => fetchData(input, order)})">
-                  <i class="fas fa-caret-square-right is-size-4"></i>
+              <i class="fas fa-angle-double-right"></i>
               </button>
       `;
   };
-  
+
+  //Función pintar detalle de comic seleccionado
   const printComicInfo = (arr) => {
     containerComics.classList.add("is-hidden");
     containerInfoCharacter.classList.add("is-hidden");
@@ -73,6 +76,7 @@ const printData = (arr) => {
         dates,
         characters: { items },
       } = comic;
+
       const releaseDate = new Intl.DateTimeFormat("es-AR").format(
         new Date(dates?.find((el) => el.type === "onsaleDate").date)
       );
@@ -147,12 +151,12 @@ const printData = (arr) => {
               <button id="first-page-btn" class="button button mr-3 is-primary" ${
                 offset === 0 && "disabled"
               } onclick="firstPage(${() => fetchCharacters(input, order)})">
-                  <i class="fas fa-caret-square-left is-size-4"></i>
+              <i class="fas fa-angle-double-left"></i>
               </button>
               <button id="previews-page-btn" class="button mr-2" ${
                 offset === 0 && "disabled"
               } onclick="previewsPage(${() => fetchCharacters(input, order)})">
-                  <i class="fas fa-caret-left is-size-4"></i>
+              <i class="fas fa-angle-left"></i>
               </button>
               <div class="button mr-2">
                   <span id="page-number">${pageNumber}</span>
@@ -160,12 +164,12 @@ const printData = (arr) => {
               <button id="next-page-btn" class="button" ${
                 offset === total - (total % 20) && "disabled"
               } onclick="nextPage(${() => fetchCharacters(input, order)})">
-                  <i class="fas fa-caret-right is-size-4"></i>
+              <i class="fas fa-angle-right"></i>
               </button>
               <button id="last-page-btn" class="button ml-3 is-primary" ${
                 offset === total - (total % 20) && "disabled"
               } onclick="lastPage(${() => fetchCharacters(input, order)})">
-                  <i class="fas fa-caret-square-right is-size-4"></i>
+              <i class="fas fa-angle-double-right"></i>
               </button>
       `;
   };
@@ -212,7 +216,7 @@ const printData = (arr) => {
           <p class="is-size-6 has-text-weight-bold mt-0 label-select">${arr[0].comics.available} Resultado(s)</p>`;
     }
   };
-  
+  //Función pintar los comics del personaje 
   const printCharacter = (arr) => {
     comicsCharacterInfo.classList.remove('is-hidden');
     let box = "";
@@ -238,15 +242,15 @@ const printData = (arr) => {
 
     //PAGINADOR EN FUNCIÓN DE UN PERSONAJE
     paginationContainer.innerHTML = `
-    <button id="first-page-btn" class="button button mr-3" ${
-      offset === 0 && "disabled"
-    } onclick="firstPage(${() => getCharacterDetail(characterDetail)})">
-                  <i class="fas fa-caret-square-left is-size-4"></i>
+              <button id="first-page-btn" class="button button mr-3" ${
+                offset === 0 && "disabled"
+              } onclick="firstPage(${() => getCharacterDetail(characterDetail)})">
+              <i class="fas fa-angle-double-left"></i>
               </button>
               <button id="previews-page-btn" class="button mr-2" ${
                 offset === 0 && "disabled"
               } onclick="previewsPage(${() => getCharacterDetail(characterDetail)})">
-                  <i class="fas fa-caret-left is-size-4"></i>
+              <i class="fas fa-angle-left"></i>
               </button>
               <div class="button mr-2">
                   <span id="page-number">${pageNumber}</span>
@@ -254,12 +258,12 @@ const printData = (arr) => {
               <button id="next-page-btn" class="button" ${
                 offset === total - (total % 20) && "disabled"
               } onclick="nextPage(${() => getCharacterDetail(characterDetail)})">
-                  <i class="fas fa-caret-right is-size-4"></i>
+              <i class="fas fa-angle-right"></i>
               </button>
               <button id="last-page-btn" class="button ml-3" ${
                 offset === total - (total % 20) && "disabled"
               } onclick="lastPage(${() => getCharacterDetail(characterDetail)})">
-                  <i class="fas fa-caret-square-right is-size-4"></i>
+              <i class="fas fa-angle-double-right"></i>
               </button>
       `;
   };
