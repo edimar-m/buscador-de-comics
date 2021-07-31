@@ -8,11 +8,13 @@ const totalData = document.getElementById("total-result");
 
 //DOM 
 //Vista general
+//Contenedores principales
 const loaderContanier = document.getElementById("container-loader");
 const containerComics = document.getElementById("container-comics");
 const characterContainer = document.getElementById("main-container");
 const comicInfoContainer = document.getElementById("container-comic-info");
 const comicInfo = document.getElementById("comic-info");
+//Contenedores especificos
 const comicCharactersInfo = document.getElementById("comic-characters-info");
 const comicDataCharacters = document.getElementById(
   "comic-data-characters"

@@ -24,11 +24,12 @@
     <meta property="twitter:title" content="Buscador de Comics">
     <meta property="twitter:description" content="Esta aplicación te permite buscar los comics de Marvel y obtener información acerca de ellos.">
     <meta property="twitter:image" content="">
+    
+    <!-- ------------------Links----------------- -->
     <!-- FAVICON -->
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
     <!-- BULMA -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-    <!-- ------------------Links----------------- -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/other-styles.css">
@@ -46,14 +47,15 @@
     </header>
     <main>
         <!-- Hero -->
-        <section class="hero is-danger is-halfheight img-hero">
+        <section class="hero is-halfheight img-hero">
             <div class="hero-body"></div>
         </section>
-       <!-- Comienza sección búsqueda -->
+       <!-- Comienza sección principal -->
         <section class="container mb-3">
-            <div class="column search-section">
+            <nav class="column search-section">
+                <!-- Comienza sección búsqueda -->
                 <div class="columns is-justify-content-space-between is-mobile ml-3 mr-5 title-search-container">
-                    <label for="search-input" class="label is-size-3">Búsqueda</label>
+                    <h2><label for="search-input" class="label is-size-3">Búsqueda</label></h2>
                 </div>
                 <div class="columns  is-flex">
                     <div class="columns ml-3 mr-5 my-2 px-2 is-align-items-center is-flex-wrap-wrap">
@@ -80,7 +82,7 @@
                         <button onclick="mainPage()" class="button has-text-weight-bold mx-2 mb-3" id="main-page">INICIO</button>
                     </div>
                 </div>
-            </div>
+            </nav>
         </section>
         <!-- Termina sección búsqueda -->
 
@@ -89,14 +91,6 @@
         <section id="container-comics" class="container mb-5">
             <h2 class="subtitle has-text-weight-bold mx-4 mb-3 title-color">Resultados</h2>
             <p class="mb-3 mx-4 has-text-weight-bold title-color"><span id="total-result">0</span> resultados</p>
-            <!-- comienza contenedor-loader -->
-            <div id="container-loader" class="is-hidden container-loader">
-                <div id="loader-container">
-                    <div id="loader" style="display: none;" role="status"> 
-                    </div>
-                </div>
-            </div>
-            <!-- Termina contenedor-loader -->
             <div id="main-container" class="columns is-flex-wrap-wrap m-2"></div>
         </section>
         <section id="container-comic-info" class="container mb-5 is-hidden comic-info">
@@ -110,21 +104,15 @@
             <div id="comics-character-info" class="columns is-flex is-flex-wrap-wrap px-6 pt-0"></div>
         </section>
         <!-- Termina sección Resultados de la búsqueda-->
-
-        <!-- Paginador -->
+        <!-- Loader -->
+        <section id="container-loader" class="is-hidden container-loader">
+            <div id="loader-container">
+                <div id="loader" style="display: none;" role="status"> 
+                </div>
+            </div>
+        </section>
+        <!-- Paginador, se en el main.js en cada función-->
         <section class="container is-flex is-justify-content-center my-6" id="pagination-container">
-            <button id="first-page-btn" class="button button mr-3">
-                <i class="fas fa-caret-square-left is-size-4"></i>
-            </button>
-            <button id="previews-page-btn" class="button mr-2">
-                <i class="fas fa-caret-left is-size-4"></i>
-            </button>
-            <button id="next-page-btn" class="button">
-                <i class="fas fa-caret-right is-size-4"></i>
-            </button>
-            <button id="lastPagelast-page-btn" class="button ml-3">
-                <i class="fas fa-caret-square-right is-size-4"></i>
-            </button>
         </section>
     </main>
 
